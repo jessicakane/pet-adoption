@@ -8,10 +8,10 @@ module.exports = {
 
     client: 'mysql2',
     connection: {
-      host: '127.0.0.1',
-      database: 'adoption_site_db',
-      user:     'root',
-      password: 'Jessica!213',
+      host: 'db-mysql-fra1-33493-do-user-14649989-0.b.db.ondigitalocean.com', // Replace with your DigitalOcean database cluster host
+      database: 'defaultdb',     
+      user: 'doadmin',          
+      password: 'AVNS_TEjd5mFLYfFIfZdNnJD'
      
     },
     pool: {
