@@ -5,6 +5,7 @@ const usersRoute = require('./routes/usersRoutes.js')
 const petsRoute = require('./routes/petsRoutes.js')
 const likesRoute = require('./routes/likesRoutes.js')
 const cookieParser = require('cookie-parser');
+const path = require('path');
 
 
 
@@ -18,7 +19,8 @@ app.use(cors({origin: 'http://localhost:3000', credentials: true}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('images')); 
-app.use(cookieParser());   
+app.use(cookieParser());  
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 // TODO backend:
 // still need to make: delete pet route, delete user route (deactivate account)
@@ -32,6 +34,11 @@ app.use(cookieParser());
 app.use('/pets', petsRoute)
 app.use('/users', usersRoute)
 app.use('/likes', likesRoute)
+
+app.get('*', function(req, res) {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
 
 dbConnection.migrate.latest().then(migration => {
   if (migration) {
