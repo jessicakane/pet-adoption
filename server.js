@@ -20,14 +20,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('images')); 
 app.use(cookieParser());  
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, 'pet-adoption-client/build')));
 
 app.use('/pets', petsRoute)
 app.use('/users', usersRoute)
 app.use('/likes', likesRoute)
 
 app.get('*', function(req, res) {
-  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+  res.sendFile(path.join(__dirname, 'pet-adoption-client/build', 'index.html'));
 });
 
 
