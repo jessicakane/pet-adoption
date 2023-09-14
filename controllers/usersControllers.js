@@ -5,7 +5,8 @@ const {addUserModelNew, getUserByEmailNew, getAllUsersModelNew, updateUserModel,
   const addUserNew = async(req, res) => {
     try {
       const newUser = req.body;
-      newUser.imageUrl = req.file.path;
+      if (req.file) {
+      newUser.imageUrl = req.file.path;}
       const emailAlreadyInUse = await getUserByEmailNew(newUser.email);
       if(emailAlreadyInUse) {
         return res.status(409).json({error: 'Email already in use'})

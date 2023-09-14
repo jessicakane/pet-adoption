@@ -108,6 +108,7 @@ const confirmUser = async( req, res, next ) => {
       next()
     });
   }
+  
 
   async function verifyToken(req, res, next) {
     const { token } = req.cookies;

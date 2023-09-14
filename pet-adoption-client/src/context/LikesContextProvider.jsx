@@ -9,7 +9,7 @@ export const LikesContextProvider = ({children}) => {
 
     const fetchLikes = async () => {
         try {
-            const response = await axios.get('http://localhost:8080/likes');
+            const response = await axios.get('http://164.92.240.250:8080/likes');
             setLikes(response.data);
 
         } catch (error) {
@@ -22,7 +22,7 @@ export const LikesContextProvider = ({children}) => {
         try {
             console.log('running addLike')
             console.log(newLike)
-            await axios.put('http://localhost:8080/likes', newLike)
+            await axios.put('http://164.92.240.250:8080/likes', newLike)
         } catch (error) {
             console.error('Error creating like');
             return
@@ -31,7 +31,7 @@ export const LikesContextProvider = ({children}) => {
 
     const deleteLike = async (userId, petId) => {
         try {
-            await axios.delete(`http://localhost:8080/likes/${userId}/${petId}`)
+            await axios.delete(`http://164.92.240.250:8080/likes/${userId}/${petId}`)
         } catch (error) {
             console.error('Error deleting like');
             return

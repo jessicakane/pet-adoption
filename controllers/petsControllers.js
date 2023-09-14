@@ -5,7 +5,8 @@ const addPetNew = async(req, res) => {
     try {
       const newPet = req.body;
       console.log(newPet);
-      newPet.imageUrl = req.file.path;
+      if (req.file) {
+      newPet.imageUrl = req.file.path;}
       await addPetModelNew(newPet);
       res.status(201).json({ message: 'New pet added successfully' });
     } catch(error) {

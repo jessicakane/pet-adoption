@@ -7,11 +7,10 @@ const {validateBody, logInSchema, updateUserInfoSchema, createUserSchema } = req
 
 //GET
 
-router.get('/', UsersControllers.getAllUsersNew); //confirm user is admin
+router.get('/', UsersControllers.getAllUsersNew); 
 router.get('/info/:userId', UsersControllers.getInfo); 
 router.post('/login', validateBody(logInSchema), confirmUser, comparePasswords, UsersControllers.loginNew);
-router.post('/signup', upload.single('profileImage'), validateBody(createUserSchema), confirmPasswordsMatch, encryptPassword, UsersControllers.addUserNew); // put repassword in object not as param
-//router.post('/update/:userId/:repassword', auth, confirmPasswordsMatch,encryptPassword, UsersControllers.updateUser); //update user info including password
+router.post('/signup', upload.single('profileImage'), validateBody(createUserSchema), confirmPasswordsMatch, encryptPassword, UsersControllers.addUserNew); 
 router.post('/update/:userId', verifyToken, upload.single('profileImage'), validateBody(updateUserInfoSchema), confirmPasswordsMatch, encryptPassword, UsersControllers.updateUser);
 router.get('/logout', UsersControllers.logOut); 
 router.post('/requests', UsersControllers.addRequest);

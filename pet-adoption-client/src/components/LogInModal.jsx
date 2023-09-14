@@ -33,7 +33,7 @@ export const LogInModal = ({showModal, handleModal}) => {
         }
         console.log(userCred);
         try {
-            const response = await axios.post('http://localhost:8080/users/login', userCred, {withCredentials: true});
+            const response = await axios.post('http://164.92.240.250:8080/users/login', userCred, {withCredentials: true});
             console.log(response.data);
             if (response.data) {
                 setName(response.data.name);

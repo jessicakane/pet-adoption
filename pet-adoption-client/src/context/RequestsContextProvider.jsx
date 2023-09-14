@@ -13,7 +13,7 @@ export const RequestsContextProvider = ({children}) => {
 
     const submitAdoptionRequest = async(requestDetails) => {
         try {
-            await axios.post('http://localhost:8080/users/requests', requestDetails, {withCredentials: true});
+            await axios.post('http://164.92.240.250:8080/users/requests', requestDetails, {withCredentials: true});
         } catch (error) {
             console.error('Error submitting adoption request:', error);
             return
@@ -22,7 +22,7 @@ export const RequestsContextProvider = ({children}) => {
 
     const fetchAllRequestsToAdmin = async (adminId) => {
         try {
-            const response = await axios.get('http://localhost:8080/users/requests', {withCredentials: true});
+            const response = await axios.get('http://164.92.240.250:8080/users/requests', {withCredentials: true});
             const allRequests = (response.data);
             const allAdminsRequests = allRequests.filter(request => request.adminId === adminId && request.requestStatus === 2);
             setAdminsRequests(allAdminsRequests);
@@ -39,7 +39,7 @@ export const RequestsContextProvider = ({children}) => {
 
     const fetchAllRequestsByUser = async (userId) => {
         try {
-            const response = await axios.get('http://localhost:8080/users/requests', {withCredentials: true});
+            const response = await axios.get('http://164.92.240.250:8080/users/requests', {withCredentials: true});
             const allRequests = (response.data);
             const usersNewRequests = allRequests.filter(request => request.userId === userId)
             setUsersRequests(usersNewRequests);   
@@ -51,7 +51,7 @@ export const RequestsContextProvider = ({children}) => {
 
     const updateRequest = async (requestId, requestStatus) => {
         try {
-            const response = await axios.put(`http://localhost:8080/users/requests/${requestId}`, requestStatus, {withCredentials: true});
+            const response = await axios.put(`http://164.92.240.250:8080/users/requests/${requestId}`, requestStatus, {withCredentials: true});
             console.log(response.data);
             return;
         } catch (error) {

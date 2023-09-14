@@ -19,7 +19,7 @@ export const HomePage = () => {
 
     const handleLogOut = async() => {
         try {
-            await axios.get('http://localhost:8080/users/logout');
+            await axios.get('http://164.92.240.250:8080/users/logout');
             Cookies.remove('name');
             Cookies.remove('id');
             Cookies.remove('admin');
