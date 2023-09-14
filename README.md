@@ -14,3 +14,6 @@ Welcome to PawPal! Browse our pets to find your furry soulmate.
 - Submit adoption of foster request: if you want to make a pet your own, submit a request to adopt or foster the pet. Keep track of your requests statuses on the "My Requests" page
 - My Pets page: all pets you've adopted, fostered or saved for later are stored on your "My Pets" page
 - Admin: a site admin has the power to make you an admin. Admins have access to the admin dashboard, where they can view all users, add and delete pets and approve or deny adoption requests
+- search: search pets by name, type, adoption status or color
+- Edit profile settings on the "Profile Settings" page
+- To view admin dashboard, email me at jessicakane213@gmail.com with your username, and I'll make you an admin!
