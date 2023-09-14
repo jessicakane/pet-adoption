@@ -15,7 +15,7 @@ const PORT = process.env.PORT;
 
 const dbConnection = require('./knex/knex');
 
-app.use(cors({origin: ['http://localhost:3000', 'http://164.92.240.250:8080'], credentials: true}));
+app.use(cors({origin: '*', credentials: true}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('images')); 
