@@ -19,10 +19,10 @@ export const AuthContextProvider = ({children}) => {
 
     const isUserSignedIn = async() => {
         try {
-            await axios.get('http://164.92.240.250:8080/pets', {withCredentials: true})
+            await axios.get('http://164.92.240.250:8080/api/pets', {withCredentials: true})
         } catch (error) {   
             
-                await axios.get('http://164.92.240.250:8080/users/logout');
+                await axios.get('http://164.92.240.250:8080/api/users/logout');
                 Cookies.remove('name');
                 Cookies.remove('id');
                 Cookies.remove('admin');
@@ -34,7 +34,7 @@ export const AuthContextProvider = ({children}) => {
 
     const fetchAllUsers = async () => {
         try {
-            const response = await axios.get('http://164.92.240.250:8080/users', {withCredentials: true});
+            const response = await axios.get('http://164.92.240.250:8080/api/users', {withCredentials: true});
             const allUsers = (response.data);
             setUsers(allUsers);
         } catch (error) {
@@ -45,7 +45,7 @@ export const AuthContextProvider = ({children}) => {
 
     const fetchUserInfo = async (userId) => {
         try {
-            const response = await axios.get(`http://164.92.240.250:8080/users/info/${userId}`, {withCredentials: true});
+            const response = await axios.get(`http://164.92.240.250:8080/api/users/info/${userId}`, {withCredentials: true});
             const userInfo = response.data;
             return userInfo;
         } catch (error) {
@@ -59,7 +59,7 @@ export const AuthContextProvider = ({children}) => {
         console.log(pair[0], pair[1]);
     }
         try {
-                await axios.post(`http://164.92.240.250:8080/users/update/${id}`, userInfo, {withCredentials: true});
+                await axios.post(`http://164.92.240.250:8080/api/users/update/${id}`, userInfo, {withCredentials: true});
             setName(userInfo.get('firstName'));
             Cookies.set('name', JSON.stringify(userInfo.get('firstName')), { expires: 1 });
             return true;
@@ -84,7 +84,7 @@ export const AuthContextProvider = ({children}) => {
             admin: '1'
         }
         try {
-            await axios.post(`http://164.92.240.250:8080/users/update/${id}`, adminObj, {withCredentials: true});
+            await axios.post(`http://164.92.240.250:8080/api/users/update/${id}`, adminObj, {withCredentials: true});
             return true;
         } catch (error) {
             console.error('Error updating user:', error);
@@ -108,7 +108,7 @@ export const AuthContextProvider = ({children}) => {
         setEmailAlreadyInUse(false);
         setMissingFields([]);
         try {
-            const response = await axios.post(`http://164.92.240.250:8080/users/signup`, newUser);
+            const response = await axios.post(`http://164.92.240.250:8080/api/users/signup`, newUser);
             console.log(response.data);
             setSignUp(false);
             return

@@ -22,9 +22,9 @@ app.use(express.static('images'));
 app.use(cookieParser());  
 app.use(express.static(path.join(__dirname, 'pet-adoption-client/build')));
 
-app.use('/pets', petsRoute)
-app.use('/users', usersRoute)
-app.use('/likes', likesRoute)
+app.use('/api/pets', petsRoute)
+app.use('/api//users', usersRoute)
+app.use('/api/likes', likesRoute)
 
 app.get('*', function(req, res) {
   res.sendFile(path.join(__dirname, 'pet-adoption-client/build', 'index.html'));

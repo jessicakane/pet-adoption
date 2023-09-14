@@ -14,7 +14,7 @@ export const PetsContextProvider = ({children}) => {
 
     const fetchAllPets = async () => {
         try {
-            const response = await axios.get('http://164.92.240.250:8080/pets', {withCredentials: true});
+            const response = await axios.get('http://164.92.240.250:8080/api/pets', {withCredentials: true});
             let allPets = (response.data);
             console.log(response.data)
             let availablePets = allPets.filter(pet => pet.adoptionStatus === 'Up for adoption');
@@ -32,7 +32,7 @@ export const PetsContextProvider = ({children}) => {
             await fetchAllPets();
             return
           }
-          const response = await axios.get(`http://164.92.240.250:8080/pets/search?search=${searchQuery}`, {withCredentials: true});
+          const response = await axios.get(`http://164.92.240.250:8080/api/pets/search?search=${searchQuery}`, {withCredentials: true});
           let allPets = (response.data);
           console.log(response.data)
           let availablePets = allPets.filter(pet => pet.adoptionStatus === 'Up for adoption');
@@ -45,7 +45,7 @@ export const PetsContextProvider = ({children}) => {
   }
     const fetchAllPetsNoToken = async () => {
       try {
-          const response = await axios.get('http://164.92.240.250:8080/pets/allpets');
+          const response = await axios.get('http://164.92.240.250:8080/api/pets/allpets');
           let allPets = (response.data);
           setPets(allPets);
           console.log(allPets);
@@ -57,7 +57,7 @@ export const PetsContextProvider = ({children}) => {
 
     const deletePet = async (petId) => {
       try {
-        const response = await axios.delete(`http://164.92.240.250:8080/pets/${petId}`, {withCredentials: true});
+        const response = await axios.delete(`http://164.92.240.250:8080/api/pets/${petId}`, {withCredentials: true});
         await fetchAllPets();
       } catch (error) {
         console.error('Error deleting user:', error);
@@ -67,7 +67,7 @@ export const PetsContextProvider = ({children}) => {
 
     const fetchPetById = async (petId) => {
       try {
-          const response = await axios.get(`http://164.92.240.250:8080/pets/${petId}`, {withCredentials: true});
+          const response = await axios.get(`http://164.92.240.250:8080/api/pets/${petId}`, {withCredentials: true});
           let pet = (response.data);
           console.log(response.data)
           
@@ -81,7 +81,7 @@ export const PetsContextProvider = ({children}) => {
 
     const updatePet = async (petId, fieldsToUpdate, id) => {
         try {
-            await axios.post(`http://164.92.240.250:8080/pets/${petId}`, fieldsToUpdate, {withCredentials: true});
+            await axios.post(`http://164.92.240.250:8080/api/pets/${petId}`, fieldsToUpdate, {withCredentials: true});
           await fetchAllPets();
           loadPetsFeatured(pets, id);
 
@@ -93,7 +93,7 @@ export const PetsContextProvider = ({children}) => {
 
     const addPet = async (newPet, handleModalFt, fetchAllPets, setError) => {
         try {
-            await axios.post(`http://164.92.240.250:8080/pets`, newPet, {withCredentials: true})
+            await axios.post(`http://164.92.240.250:8080/api/pets`, newPet, {withCredentials: true})
             handleModalFt();
             fetchAllPets();
         } catch (error) {
