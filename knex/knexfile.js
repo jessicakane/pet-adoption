@@ -8,10 +8,10 @@ module.exports = {
 
     client: 'mysql2',
     connection: {
-      host: '127.0.0.1',
-      database: 'adoption_site_db',
+      host: '164.92.240.250',
+      database: 'pets_database',
       user:     'root',
-      password: 'Jessica!213',
+      password: 'root',
      
     },
     pool: {
