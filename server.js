@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'pet-adoption-client/build')));
 
 app.use('/api/pets', petsRoute)
-app.use('/api//users', usersRoute)
+app.use('/api/users', usersRoute)
 app.use('/api/likes', likesRoute)
 
 app.get('*', function(req, res) {
