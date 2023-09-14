@@ -65,7 +65,7 @@ export const LogInModal = ({showModal, handleModal}) => {
             email: emailText,
             password: passwordText,
             phoneNumber: phoneNumberText,
-            admin: 1,
+            admin: 0,
             repassword: confirmPasswordText,
         }
         const missingFieldsList = [];
