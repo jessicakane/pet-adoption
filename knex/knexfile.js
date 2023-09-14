@@ -8,7 +8,7 @@ module.exports = {
 
     client: 'mysql2',
     connection: {
-      host: '164.92.240.250',
+      host: 'localhost',
       database: 'pets_database',
       user:     'root',
       password: 'root',
