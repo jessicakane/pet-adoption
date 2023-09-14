@@ -22,7 +22,7 @@ const {addUserModelNew, getUserByEmailNew, getAllUsersModelNew, updateUserModel,
   const loginNew = async(req, res) => {
     try {
       const { user, token } = req.body;
-      res.cookie('token', token, { maxAge: 900000, httpOnly: true, sameSite: 'none', secure: true/false});
+      res.cookie('token', token, { maxAge: 900000});
       res.send({name: user.firstName, id: user.userId, admin: user.admin, image: user.imageUrl}); 
     
     } catch (error) {
