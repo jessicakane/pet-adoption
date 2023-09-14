@@ -10,8 +10,8 @@ module.exports = {
     connection: {
       host: 'localhost',
       database: 'pets_database',
-      user:     'root',
-      password: 'root',
+      user:     'jess',
+      password: 'jess',
      
     },
     pool: {
