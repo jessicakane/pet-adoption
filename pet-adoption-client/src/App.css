@@ -1,0 +1,187 @@
+
+
+.App {
+  text-align: center;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  background-color: #f1eeef;
+}
+
+.modalBottom {
+  flex-direction: column;
+  align-items: center;
+}
+
+.petsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.petsContainer > * {
+  margin-bottom: 5px;
+}
+
+.invalidLogin, .passwordsDontMatch {
+  text-align: center;
+  margin-bottom: 15px;
+  margin-top: 0;
+  color: red;
+}
+
+.petsPage input {
+  width: 60%;
+  margin-bottom: 30px;
+  margin-top: 10px;
+  border-radius: 15px;
+  border: 1px solid black;
+  background-color: #f1eeef;
+}
+
+#petsPageTitle, #myPetsPageTitle, .homeContainer {
+  margin-top: 65px;
+}
+
+#navBar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  opacity: 0.9;
+  z-index: 1;
+}
+
+.cardBody {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.usersContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.whiteOutline {
+  color: white;
+  -webkit-text-stroke: 2px black; 
+  -webkit-text-fill-color: white;
+  
+ 
+}
+
+.deleteHeader {
+  color: #dd3444;
+}
+
+.adminHeader {
+  color: #d68700
+}
+
+.homeContainer {
+  background-image: url(./images/dog.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.section {
+  min-height: 100vh;
+}
+
+
+.dogImage {
+  background-image: url(./images/dogSettings.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+}
+
+.petsPageHeader {
+  justify-content: center;
+  align-items: center;
+}
+
+.heartContainer {
+  margin-top: 0;
+  display: flex;
+  position: absolute;
+  top: 0;
+}
+
+.missingField {
+  border: 1px solid red;
+}
+
+.petName:hover {
+  color: orange;
+  cursor: pointer;
+}
+
+.petName {
+  color: #d68700;
+}
+
+.approvedRequest {
+  background-color: #b8edb8;
+}
+
+.deniedRequest {
+  background-color: pink;
+}
+
+.pendingRequest {
+  background-color: lightgoldenrodyellow;
+}
+
+.confirmReqButton:hover {
+ background-color: orange;
+}
+
+.confirmReqButton:active {
+  background-color: orange !important; 
+}
